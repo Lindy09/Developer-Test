@@ -5,13 +5,21 @@ namespace Inoxico.TechnicalQuestions.Answers
     {
         public static int GetLongestSentance(string s)
         { 
-            s = "We test coders. Give us a try?";
-            		string[] words = s.Split(' ', '.','?');
-               
-			foreach (var word in words)
-				{
-    			Console.WriteLine(word);
-				}    
+            string[] sentences = s.Split(new[] { ' ','.', '?', '!' }, StringSplitOptions.RemoveEmptyEntries);
+            int max = 0;
+
+            foreach (var sentence in sentences)
+            {
+                string trimmedSentence = sentence.Trim();
+                string[] words = trimmedSentence.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                if (words.Length > max) 
+				{ 
+                    max = words.Length;
+                }
+
+            }
+
+        return max;    
         }
     }
 }

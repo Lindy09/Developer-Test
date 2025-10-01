@@ -1,1 +1,2 @@
-# Developer-Test
+# TechnicalQuestions
+Seed project for answering technical questions
